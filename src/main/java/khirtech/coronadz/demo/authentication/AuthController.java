@@ -1,7 +1,7 @@
-package khirtech.coronadz.demo.authetication;
+package khirtech.coronadz.demo.authentication;
 
-import khirtech.coronadz.demo.authetication.models.AuthenticationLogin;
-import khirtech.coronadz.demo.authetication.models.AuthenticationRegister;
+import khirtech.coronadz.demo.authentication.models.AuthenticationLogin;
+import khirtech.coronadz.demo.authentication.models.AuthenticationRegister;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

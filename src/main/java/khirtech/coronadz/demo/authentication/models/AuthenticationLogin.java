@@ -1,4 +1,4 @@
-package khirtech.coronadz.demo.authetication.models;
+package khirtech.coronadz.demo.authentication.models;
 
 import lombok.Builder;
 import lombok.Data;
