@@ -1,13 +1,11 @@
-package khirtech.coronadz.demo.controller;
+package khirtech.coronadz.demo.infection;
 
 import khirtech.coronadz.demo.entities.Infection;
-import khirtech.coronadz.demo.repositories.InfectionRepository;
 import org.springframework.data.mongodb.core.geo.GeoJsonPoint;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.time.LocalDateTime;
