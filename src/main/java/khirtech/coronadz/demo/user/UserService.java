@@ -35,8 +35,22 @@ public class UserService implements ServiceMethods<UserModel> {
         return Optional.of(result);
     }
 
+    // TODO: 3/16/20 Update method not yet implementd  
+    
     @Override
     public Optional<UserModel> update() {
        return null;
     }
+
+
+    /**
+     * Find a user using his number phone
+     * The Number Phone is a unique identifier
+     * @param numberPhone
+     */
+    public Optional<UserModel> findUserByNumberPhone(String numberPhone) {
+        Optional<UserModel> result  = this.userRepository.findByNumberPhone(numberPhone);
+        return result;
+    }
+
 }
