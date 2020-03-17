@@ -38,11 +38,15 @@ public class SpringConfigureSecurity extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
-        httpSecurity.csrf().disable()
-                .authorizeRequests().antMatchers("/api/auth/login").permitAll()
+        httpSecurity
+                .csrf().disable()
+                .authorizeRequests()
+                .antMatchers("/api/auth/login").permitAll()
                 .antMatchers("/api/auth/register").permitAll()
-                .anyRequest().authenticated().and().
-                exceptionHandling().and().sessionManagement()
+                .anyRequest()
+                .authenticated()
+                .and()
+                .exceptionHandling().and().sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         httpSecurity.addFilterBefore(JwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
     }

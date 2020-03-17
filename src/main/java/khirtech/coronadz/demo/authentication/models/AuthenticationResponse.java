@@ -1,6 +1,11 @@
 package khirtech.coronadz.demo.authentication.models;
 
-public class AuthenticationResponse {
+import lombok.Data;
+
+import java.io.Serializable;
+
+@Data
+public class AuthenticationResponse implements Serializable {
 
     private  String jwt;
     private int status;

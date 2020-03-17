@@ -20,7 +20,7 @@ corona-dz
     "jwt":"jwt string",
     "status": 200,
     "user": {
-        "phoneNumber": "qwerty",
+        "phoneNumber": "123456789",
         "id": "MZzDscI8wrgFZss7RUWi"
     }
 }
@@ -35,13 +35,18 @@ corona-dz
 
 * Request Body
 {
-	"username" : "fake",
-	"phoneNumber" : "1234567890",
-	"password" : "fake",
-	"email"    : "fake@fakel.com",
-	"userType" : "USER | ADMIN",
-	"longtitude": "0",
-	"latitude" : "0"
+	
+	    "firstName" :"fake",
+        "lastName " :"fake",
+        "age" :"33",
+        "numberPhone" :"1234",
+        "latitude" :"123",
+        "longitude":"123",
+        "email":"fake@gmail.com",
+        "password":"1234567890",
+        "profilePicture":"path",
+        "common":"1",
+        "wilaya":"24"
 }
 
 * Response Body

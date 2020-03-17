@@ -30,7 +30,7 @@ public class UserDetailsCustom implements UserDetailsService {
         result.orElseThrow(() -> new UsernameNotFoundException("User Not Found"));
         // return the user model and the Authorized array of the user 
         // TODO: 3/16/20 implement the user Roles
-        User user = new User(result.get().getNumberPhone(),result.get().getPassword(),new ArrayList<>());
-        return user;
+        return new User(result.get().getNumberPhone(),result.get().getPassword(),new ArrayList<>());
+
     }
 }

@@ -35,7 +35,7 @@ public class UserService implements ServiceMethods<UserModel> {
         return Optional.of(result);
     }
 
-    // TODO: 3/16/20 Update method not yet implementd  
+    // TODO: 3/16/20 Update method not yet implementd
     
     @Override
     public Optional<UserModel> update() {
@@ -52,5 +52,7 @@ public class UserService implements ServiceMethods<UserModel> {
         Optional<UserModel> result  = this.userRepository.findByNumberPhone(numberPhone);
         return result;
     }
+
+
 
 }

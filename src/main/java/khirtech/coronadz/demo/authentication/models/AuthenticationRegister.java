@@ -16,5 +16,7 @@ public class AuthenticationRegister {
     private String email;
     private String password;
     private String profilePicture;
+    private int common;
+    private int wilaya;
 
 }
