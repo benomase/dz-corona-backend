@@ -44,7 +44,23 @@ public class InfectionController {
     }
 
 
-    public void updateOne(){
+    @GetMapping("/infection/")
+    public void findOneByID(@RequestParam("id") String id) {
+
+    }
+
+    @GetMapping("/infection/")
+    public void findByWilya(@RequestParam("wilaya") int willayaID) {
+
+    }
+
+    @GetMapping("/infection/")
+    public void findByCommon(@RequestParam("common") int commonID) {
+
+    }
+
+    @PutMapping("/infection")
+    public void updateOne(@RequestBody Infection infection){
 
     }
 
