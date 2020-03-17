@@ -11,5 +11,5 @@ public interface ServiceMethods<T> {
 
     public Optional<T> save(T  model);
 
-    public Optional<T> update();
+    public Optional<T> update(T model);
 }
