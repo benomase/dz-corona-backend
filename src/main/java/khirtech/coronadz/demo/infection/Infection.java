@@ -3,6 +3,7 @@ package khirtech.coronadz.demo.infection;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import lombok.Builder;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.geo.GeoJsonPoint;
@@ -11,18 +12,18 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.time.LocalDateTime;
 
 
+@Builder
 @Data
 @Document(collection = "infection")
 public class Infection {
     @Id
     private String id;
-    private GeoJsonPoint location;
     private int wilayaID;
     private int communeID;
-    private LocalDateTime creationDate;
+    private long creationDate;
     private String ownerId;
-    private Double lat;
-    private Double lng;
+    private Double latitude;
+    private Double longitude;
     private int state;
 
 

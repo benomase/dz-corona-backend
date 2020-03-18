@@ -4,6 +4,7 @@ import khirtech.coronadz.demo.utils.ServiceMethods;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.Instant;
 import java.util.List;
 import java.util.Optional;
 
@@ -29,7 +30,20 @@ public class InfectionService implements ServiceMethods<Infection> {
 
     @Override
     public Optional<Infection> save(Infection model) {
-        Infection result = this.infectionRepository.save(model);
+        Instant instant = Instant.now();
+        long timeStampMillis = instant.toEpochMilli();
+        System.out.println(timeStampMillis);
+
+        Infection infection = Infection.builder()
+                .communeID(model.getCommuneID())
+                .creationDate(timeStampMillis)
+                .latitude(model.getLatitude())
+                .longitude(model.getLongitude())
+                .ownerId(model.getOwnerId())
+                .state(model.getState())
+                .wilayaID(model.getWilayaID())
+                .build();
+        Infection result = this.infectionRepository.save(infection);
         return Optional.of(result);
     }
 
