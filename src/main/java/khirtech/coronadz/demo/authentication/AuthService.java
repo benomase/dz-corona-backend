@@ -55,8 +55,7 @@ public class AuthService {
                 .password(model.getPassword())
                 .email(model.getEmail())
                 .lastName(model.getLastName())
-                .latitude(model.getLatitude())
-                .longitude(model.getLongitude())
+                .address(model.getAddress())
                 .build();
 
         // TODO: 3/17/20  verify the user exist or no first if exist  not add it throw an ex

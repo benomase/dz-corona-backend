@@ -1,6 +1,7 @@
 package khirtech.coronadz.demo.infection;
 
 import khirtech.coronadz.demo.utils.ResponseBuilder;
+import khirtech.coronadz.demo.utils.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,8 +14,12 @@ import java.util.Optional;
 @RequestMapping("/api")
 public class InfectionController {
 
+    private final InfectionService infectionService;
+
     @Autowired
-    private InfectionService infectionService;
+    public InfectionController(InfectionService infectionService) {
+        this.infectionService = infectionService;
+    }
 
     @GetMapping("/infection")
     public ResponseEntity getAll() {
@@ -28,14 +33,7 @@ public class InfectionController {
 
     @PostMapping("/infection")
     public ResponseEntity addOne(@RequestBody Infection infection) {
-       /* infection.setLocation(new GeoJsonPoint(infection.getLng(), infection.getLat()));
-        List<Infection> infectionList = this.infectionRepository.findAll();
-        infection.setState(1);
-        infection.setCreationDate(LocalDateTime.now(ZoneId.of("UTC+01:00")));
-        this.infectionRepository.save(infection);
-        return new JSONObject().put("code", 201).put("content", "").toString();*/
-
-       Optional<Infection> result  = this.infectionService.save(infection);
+        Optional<Infection> result  = this.infectionService.save(infection);
         ResponseBuilder builder = ResponseBuilder.builder()
                 .response(result)
                 .status(HttpStatus.OK.value())
@@ -43,25 +41,37 @@ public class InfectionController {
         return ResponseEntity.status(HttpStatus.OK).body(builder);
     }
 
-
-    @GetMapping("/infection/")
-    public void findOneByID(@RequestParam("id") String id) {
-
-    }
-
-    @GetMapping("/infection/")
-    public void findByWilya(@RequestParam("wilaya") int willayaID) {
-
-    }
-
-    @GetMapping("/infection/")
-    public void findByCommon(@RequestParam("common") int commonID) {
-
-    }
-
     @PutMapping("/infection")
     public void updateOne(@RequestBody Infection infection){
 
     }
+
+    @GetMapping("/infection/find")
+    public ResponseEntity findOneByID(@RequestParam("query") String query, @RequestParam("param") String param) {
+
+        if (query.equals(Utils.ID_INFECTION)) {
+            Optional<Infection> result = this.infectionService.findOne(param);
+            ResponseBuilder builder = ResponseBuilder.builder().response(result.get()).status(HttpStatus.OK.value()).build();
+            return ResponseEntity.status(HttpStatus.OK).body(builder);
+        }
+
+        if (query.equals(Utils.ID_WILAYA)) {
+            Optional<Infection> result = this.infectionService.findByIDWilaya(param);
+            ResponseBuilder builder = ResponseBuilder.builder().response(result.get()).status(HttpStatus.OK.value()).build();
+            return ResponseEntity.status(HttpStatus.OK).body(builder);
+        }
+
+
+        if (query.equals(Utils.ID_COMMOM)) {
+            Optional<Infection> result = this.infectionService.findByIDCommon(param);
+            ResponseBuilder builder = ResponseBuilder.builder().response(result.get()).status(HttpStatus.OK.value()).build();
+            return ResponseEntity.status(HttpStatus.OK).body(builder);
+        }
+
+        return null;
+    }
+
+
+
 
 }

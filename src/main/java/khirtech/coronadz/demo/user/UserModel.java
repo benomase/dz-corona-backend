@@ -13,11 +13,12 @@ public class UserModel {
     private String id;
     private String firstName;
     private String lastName;
-    private int age;
     private String numberPhone;
-    private double latitude;
-    private double longitude;
+    private int age;
     private String email;
     private String password;
     private String profilePicture;
+
+    private Address address;
+
 }

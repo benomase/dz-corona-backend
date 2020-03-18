@@ -38,4 +38,12 @@ public class InfectionService implements ServiceMethods<Infection> {
         Infection result = this.infectionRepository.save(model);
         return Optional.of(result);
     }
+
+    public Optional<Infection> findByIDWilaya(String param) {
+        return this.infectionRepository.findByWilayaID(Integer.parseInt(param));
+    }
+
+    public Optional<Infection> findByIDCommon(String param) {
+        return this.infectionRepository.findByCommuneID(Integer.parseInt(param));
+    }
 }

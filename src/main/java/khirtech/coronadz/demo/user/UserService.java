@@ -38,7 +38,7 @@ public class UserService implements ServiceMethods<UserModel> {
     // TODO: 3/16/20 Update method not yet implementd
     
     @Override
-    public Optional<UserModel> update() {
+    public Optional<UserModel> update(UserModel model) {
        return null;
     }
 

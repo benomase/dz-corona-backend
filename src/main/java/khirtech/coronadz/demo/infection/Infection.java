@@ -17,8 +17,8 @@ public class Infection {
     @Id
     private String id;
     private GeoJsonPoint location;
-    private String wilayaID;
-    private String communeID;
+    private int wilayaID;
+    private int communeID;
     private LocalDateTime creationDate;
     private String ownerId;
     private Double lat;
