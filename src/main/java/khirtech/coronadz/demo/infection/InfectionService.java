@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class InfectionService implements ServiceMethods<Infection> {
@@ -49,11 +50,17 @@ public class InfectionService implements ServiceMethods<Infection> {
         return Optional.of(result);
     }
 
- /*   public Optional<Infection> findByIDWilaya(String param) {
-        return this.infectionRepository.findByWilayaID(Integer.parseInt(param));
+    public List<Infection> findByIDWilaya(String param) {
+        List<Infection> list = this.findAll();
+        return list.stream().filter(infection ->
+                infection.getGeoLocation().getWilayaID()== Integer.parseInt(param))
+                .collect(Collectors.toList());
     }
 
-    public Optional<Infection> findByIDCommon(String param) {
-        return this.infectionRepository.findByCommuneID(Integer.parseInt(param));
-    }*/
+    public List<Infection> findByIDCommon(String param) {
+        List<Infection> list = this.findAll();
+        return list.stream().filter(infection ->
+                infection.getGeoLocation().getCommuneID() == Integer.parseInt(param))
+                .collect(Collectors.toList());
+    }
 }

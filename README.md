@@ -230,6 +230,25 @@ corona-dz
 ```
 
 
+
+* **Find Infection by ID,wilaya or common**
+```js
+* Route  : infection/find
+* Method : PUT
+* URL    : www.server.com/api/infection/find?query=xyz&param=xyz
+* Token  : "string token"
+* query  : id_wilaya | id_common | id_infection
+* Params : ID infection
+
+* Response Body
+{
+    "status": 200,
+    "response": [{ Object X }]
+}
+```
+
+
+
 **Error Response Body**
 ```js
 {

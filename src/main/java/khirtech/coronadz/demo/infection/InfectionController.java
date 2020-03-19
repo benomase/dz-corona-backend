@@ -60,20 +60,19 @@ public class InfectionController {
             return ResponseEntity.status(HttpStatus.OK).body(builder);
         }
 
-     /*   if (query.equals(Utils.ID_WILAYA)) {
-            Optional<Infection> result = this.infectionService.findByIDWilaya(param);
-            ResponseBuilder builder = ResponseBuilder.builder().response(result.get()).status(HttpStatus.OK.value()).build();
+        if (query.equals(Utils.ID_WILAYA)) {
+            List<Infection> result = this.infectionService.findByIDWilaya(param);
+            ResponseBuilder builder = ResponseBuilder.builder().response(result).status(HttpStatus.OK.value()).build();
             return ResponseEntity.status(HttpStatus.OK).body(builder);
         }
 
-
         if (query.equals(Utils.ID_COMMOM)) {
-            Optional<Infection> result = this.infectionService.findByIDCommon(param);
-            ResponseBuilder builder = ResponseBuilder.builder().response(result.get()).status(HttpStatus.OK.value()).build();
+            List<Infection> result = this.infectionService.findByIDCommon(param);
+            ResponseBuilder builder = ResponseBuilder.builder().response(result).status(HttpStatus.OK.value()).build();
             return ResponseEntity.status(HttpStatus.OK).body(builder);
-        }*/
+        }
 
-        return null;
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ResponseBuilder.builder().status(HttpStatus.BAD_REQUEST.value()));
     }
 
 }
