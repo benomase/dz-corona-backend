@@ -1,44 +1,26 @@
 package khirtech.coronadz.demo.infection;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
 import lombok.Builder;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.geo.GeoJsonPoint;
 import org.springframework.data.mongodb.core.mapping.Document;
-
-import java.time.LocalDateTime;
-
 
 @Builder
 @Data
 @Document(collection = "infection")
 public class Infection {
+
     @Id
     private String id;
-    private int wilayaID;
-    private int communeID;
     private long creationDate;
-    private String ownerId;
-    private Double latitude;
-    private Double longitude;
-    private int state;
+    private GeoLocation geoLocation;
+    private String sexe;
+    private String types;
+    private boolean verified;
+    private String creatorID;
 
+    /**
+     * The Front will use the file of Gps to get the information
+     */
 
-    @Override
-    public String toString() {
-        ObjectMapper mapper = new ObjectMapper();
-
-        String jsonString = "";
-        try {
-            mapper.enable(SerializationFeature.INDENT_OUTPUT);
-            jsonString = mapper.writeValueAsString(this);
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-        }
-
-        return jsonString;
-    }
 }

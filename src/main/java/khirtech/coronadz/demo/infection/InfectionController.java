@@ -55,7 +55,7 @@ public class InfectionController {
             return ResponseEntity.status(HttpStatus.OK).body(builder);
         }
 
-        if (query.equals(Utils.ID_WILAYA)) {
+     /*   if (query.equals(Utils.ID_WILAYA)) {
             Optional<Infection> result = this.infectionService.findByIDWilaya(param);
             ResponseBuilder builder = ResponseBuilder.builder().response(result.get()).status(HttpStatus.OK.value()).build();
             return ResponseEntity.status(HttpStatus.OK).body(builder);
@@ -66,7 +66,7 @@ public class InfectionController {
             Optional<Infection> result = this.infectionService.findByIDCommon(param);
             ResponseBuilder builder = ResponseBuilder.builder().response(result.get()).status(HttpStatus.OK.value()).build();
             return ResponseEntity.status(HttpStatus.OK).body(builder);
-        }
+        }*/
 
         return null;
     }

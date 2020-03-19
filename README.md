@@ -100,12 +100,21 @@ corona-dz
 
 * Request Body
 {
-    "wilayaID":"1",
-    "communeID":"1",
-    "ownerId" :"12345678",
-    "latitude"     :"123",
-    "longitude"     :"123",
-    "state"   :  "1"
+
+	  "creationDate" : 1234555,
+      "sexe"         :  "M",
+      "types"        :  "1",
+      "verified"     :  "false",
+      "creatorID"    :   "12343214jdjsl",
+      "geoLocation"  :   
+      {
+       	"wilayaID":"1",
+        "communeID":"1",
+        "latitude"     :"123",
+        "longitude"     :"123"
+       }
+
+	
 }
 
 
@@ -113,17 +122,66 @@ corona-dz
 {
     "status": 200,
     "response": {
-        "id": "5e723c325ba0fa356876e68e",
-        "wilayaID": 1,
-        "communeID": 1,
-        "creationDate": 1584544818646,
-        "ownerId": "12345678",
-        "latitude": 123.0,
-        "longitude": 123.0,
-        "state": 1
+        "id": "5e72784cd522512dfa90385f",
+        "creationDate": 1234555,
+        "geoLocation": {
+            "wilayaID": 1,
+            "communeID": 1,
+            "latitude": 123.0,
+            "longitude": 123.0
+        },
+        "sexe": "M",
+        "types": "1",
+        "verified": false,
+        "creatorID": "12343214jdjsl"
     }
 }
 ```
+
+
+* **List Infection**
+```js
+* Route  : infection
+* Method : GET
+* URL    : www.server.com/api/infection
+* Token  : "string token"
+
+* Response Body
+{
+    "status": 200,
+    "response": [
+        {
+            "id": "5e72784cd522512dfa90385f",
+            "creationDate": 1234555,
+            "geoLocation": {
+                "wilayaID": 1,
+                "communeID": 1,
+                "latitude": 123.0,
+                "longitude": 123.0
+            },
+            "sexe": "M",
+            "types": "1",
+            "verified": false,
+            "creatorID": "12343214jdjsl"
+        },
+        {
+            "id": "5e734ad3d522512dfa903860",
+            "creationDate": 1234555,
+            "geoLocation": {
+                "wilayaID": 1,
+                "communeID": 1,
+                "latitude": 123.0,
+                "longitude": 123.0
+            },
+            "sexe": "M",
+            "types": "1",
+            "verified": false,
+            "creatorID": "12343214jdjsl"
+        }
+    ]
+}
+```
+
 
 **Error Response Body**
 ```js

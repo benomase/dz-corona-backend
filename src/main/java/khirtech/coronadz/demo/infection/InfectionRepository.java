@@ -8,9 +8,5 @@ import java.util.Optional;
 
 @Repository
 public interface InfectionRepository extends MongoRepository<Infection,String> {
-    List<Infection> findAll();
-    List<Infection> findAllByWilayaID();
-    List<Infection> findAllByCommuneID();
-    Optional<Infection> findByWilayaID(int s);
-    Optional<Infection> findByCommuneID(int s);
+
 }
