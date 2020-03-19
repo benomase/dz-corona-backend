@@ -34,7 +34,7 @@ public class InfectionController {
 
         infection.setLocation(new GeoJsonPoint(infection.getLng(), infection.getLat()));
 
-
+        // why ??
         List<Infection> infectionList = this.infectionRepository.findAll();
 
         infection.setState(1);
