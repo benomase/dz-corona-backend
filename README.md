@@ -36,7 +36,7 @@ corona-dz
 * Request Body
 {
 	
-	    "firstName" :"fake",
+	"firstName" :"fake",
         "lastName " :"fake",
         "age" :"33",
         "numberPhone" :"1234",
