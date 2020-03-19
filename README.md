@@ -182,6 +182,54 @@ corona-dz
 }
 ```
 
+* **Update Infection**
+```js
+* Route  : infection
+* Method : PUT
+* URL    : www.server.com/api/infection/{id}
+* Token  : "string token"
+*Params  : ID infection
+
+* Request Body 
+{
+
+     "creationDate" : 333333,
+      "sexe"         :  "M",
+      "types"        :  "1",
+      "verified"     :  "true",
+      "creatorID"    :   "12343214jdjsl",
+      "geoLocation"  :   
+      {
+       	"wilayaID":"1",
+        "communeID":"1",
+        "latitude"     :"123",
+        "longitude"     :"123"
+       }
+
+	
+}
+
+* Response Body
+{
+    "status": 200,
+    "response": {
+        "id": "5e734ad3d522512dfa903860",
+        "creationDate": 333333,
+        "geoLocation": {
+            "wilayaID": 1,
+            "communeID": 1,
+            "latitude": 123.0,
+            "longitude": 123.0
+        },
+        "sexe": "M",
+        "types": "1",
+        "verified": true,
+        "creatorID": "12343214jdjsl"
+    }
+}
+```
+
+
 
 **Error Response Body**
 ```js

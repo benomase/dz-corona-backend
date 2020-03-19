@@ -4,7 +4,6 @@ import khirtech.coronadz.demo.utils.ServiceMethods;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.Instant;
 import java.util.List;
 import java.util.Optional;
 
@@ -36,8 +35,17 @@ public class InfectionService implements ServiceMethods<Infection> {
     }
 
     @Override
-    public Optional<Infection> update(Infection model) {
-        Infection result = this.infectionRepository.save(model);
+    public Optional<Infection> update(String id, Infection model) {
+        Infection infection = Infection.builder()
+                .id(id)
+                .creationDate(model.getCreationDate())
+                .creatorID(model.getCreatorID())
+                .geoLocation(model.getGeoLocation())
+                .sexe(model.getSexe())
+                .types(model.getTypes())
+                .verified(model.isVerified())
+                .build();
+        Infection result = this.infectionRepository.save(infection);
         return Optional.of(result);
     }
 

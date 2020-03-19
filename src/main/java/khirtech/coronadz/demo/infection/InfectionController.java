@@ -41,9 +41,14 @@ public class InfectionController {
         return ResponseEntity.status(HttpStatus.OK).body(builder);
     }
 
-    @PutMapping("/infection")
-    public void updateOne(@RequestBody Infection infection){
-
+    @PutMapping("/infection/{id}")
+    public ResponseEntity updateOne(@RequestBody Infection infection, @PathVariable String id){
+        Optional<Infection> result  = this.infectionService.update(id,infection);
+        ResponseBuilder builder = ResponseBuilder.builder()
+                .response(result)
+                .status(HttpStatus.OK.value())
+                .build();
+        return ResponseEntity.status(HttpStatus.OK).body(builder);
     }
 
     @GetMapping("/infection/find")

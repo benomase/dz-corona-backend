@@ -1,5 +1,6 @@
 package khirtech.coronadz.demo.user;
 
+import khirtech.coronadz.demo.infection.Infection;
 import khirtech.coronadz.demo.utils.ServiceMethods;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,7 +39,7 @@ public class UserService implements ServiceMethods<UserModel> {
     // TODO: 3/16/20 Update method not yet implementd
     
     @Override
-    public Optional<UserModel> update(UserModel model) {
+    public Optional<UserModel> update(String id, Infection model) {
        return null;
     }
 
