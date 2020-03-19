@@ -230,7 +230,6 @@ corona-dz
 ```
 
 
-
 **Error Response Body**
 ```js
 {

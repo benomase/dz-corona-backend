@@ -76,7 +76,4 @@ public class InfectionController {
         return null;
     }
 
-
-
-
 }
