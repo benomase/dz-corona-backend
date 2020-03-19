@@ -76,18 +76,7 @@ corona-dz
 
 * Response Body
 {
-    "status": 200,
-    "message": "User Profile",
-    "response": {
-        "userId": "XNUO4B148octbd3FgyF6",
-        "username": "fake",
-        "email": "fake@fakel.com",
-        "password": null,
-        "phoneNumber": 1234567890,
-        "profileImage": "",
-        "longtitude": 0,
-        "latitude": 0
-    }
+   wait it not yet ready
 }
 ```
 
